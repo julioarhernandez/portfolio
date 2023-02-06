@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="800px" height="800px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <rect id="shape-1" x="16" y="4" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-2" x="10" y="4" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-3" x="16" y="10" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-4" x="10" y="10" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-5" x="16" y="16" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-6" x="10" y="16" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-7" x="4" y="4" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-8" x="4" y="10" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <rect id="shape-9" x="4" y="16" width="4" height="4" rx="1" fill-rule="evenodd"/>
+  <line x1="17" y1="7" x2="7" y2="17" id="Path" />
+  <line x1="7" y1="7" x2="17" y2="17" id="Path" />
+</svg>

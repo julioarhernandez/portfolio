@@ -1,3 +1,33 @@
 .Nav {
-
+    position: relative;
+    &-menu {
+        //background-color: white;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &-item {
+            overflow: hidden;
+        }
+    }
+    &-icon {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        &-img {
+            //border: 1px solid white;
+            height: 40px;
+            width: 40px;
+            stroke: white;
+            stroke-width: 2;
+            stroke-linecap: round;
+            fill: white;
+            fill-rule: evenodd;
+            position: absolute;
+            right: 0;
+        }
+    }
 }
