@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {AnimatePresence, motion} from "framer-motion"
 import {MenuContext} from "../../contexts/contexts";
+import pagesData from "../../data/pages";
 
 import "./Nav.scss";
 
@@ -61,7 +62,7 @@ const variantsLi = {
     }
 };
 
-const Nav = ({items}) => {
+const Nav = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useContext(MenuContext);
 
@@ -69,7 +70,7 @@ const Nav = ({items}) => {
         setOpen(false);
         navigate(url);
     }
-    const listOfItems = items.map((item, index) =>
+    const listOfItems = pagesData.pages.map((item, index) =>
         <li key={`li-${index}`} className="Nav-menu-item heading">
             <motion.div
                 variants={variantsLi}
@@ -77,6 +78,18 @@ const Nav = ({items}) => {
                 className="Nav-menu-item-wrapper"
             >
                 <a href="#" onClick={() => handleRouteLink(item.link)}>{item.label}</a>
+            </motion.div>
+        </li>
+    );
+
+    const listOfAsideItems = pagesData.contact.map((item, index) =>
+        <li key={`li-${index}`} className="Nav-menu-item">
+            <motion.div
+                variants={variantsLi}
+                key={index}
+                className="Nav-menu-item-wrapper"
+            >
+                <a href={item.link} target="_blank">{item.label}</a>
             </motion.div>
         </li>
     );
@@ -122,9 +135,17 @@ const Nav = ({items}) => {
                 variants={variantsMenu}
                 className="Nav-menu"
             >
+                <div className="Nav-menu-list">
                     <motion.ul variants={variantsUl}>
                         {listOfItems}
                     </motion.ul>
+                </div>
+                <div className="Nav-menu-aside">
+                    <motion.ul variants={variantsUl}>
+                        {listOfAsideItems}
+                    </motion.ul>
+                </div>
+
             </motion.div>
 
         </nav>
