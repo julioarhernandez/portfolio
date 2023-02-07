@@ -62,7 +62,7 @@ const Home = () => {
             className="Home"
         >
             <motion.div
-                className="heading heading-transparent"
+                className="heading"
                 variants={item}
             >
                 <span>{homeData.headerTitle}</span>
@@ -70,7 +70,7 @@ const Home = () => {
 
             </motion.div>
             <motion.div
-                className="heading"
+                className="heading  heading-transparent"
                 variants={item}
             >
                 {homeData.headerSubtitle}

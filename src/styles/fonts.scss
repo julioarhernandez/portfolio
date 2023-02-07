@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+@font-face {
+    src: url('../fonts/wsvf.woff2') format('woff2-variations');
+    font-family:'Widescreen VF';
+    font-style: normal;
+}
+
 .heading {
-    font-family: 'Fredoka One', cursive;
-    font-size: 36px;
+    font-family: 'Widescreen VF', cursive;
+    font-variation-settings: "MIXD" 100, "wght" 900, "wdth" 100;
+    font-size: 24px;
     text-transform: uppercase;
     &-transparent {
         color: transparent;
@@ -10,11 +17,18 @@
     }
     &-highlighted {
         color: red;
-        -webkit-text-stroke: initial;
+        font-size: 35px;
     }
     > span {
         &:not(:last-child){
             margin-right: 10px;
+        }
+    }
+    a {
+        font-variation-settings: "MIXD" 100, "wght" 900, "wdth" 100;
+        transition: .3s;
+        &:hover {
+            font-variation-settings: "MIXD" 200, "wght" 900, "wdth" 100;
         }
     }
 }
