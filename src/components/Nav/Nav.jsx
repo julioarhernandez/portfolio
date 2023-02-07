@@ -1,13 +1,25 @@
 import React, {useContext, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {AnimatePresence, motion} from "framer-motion"
 import {MenuContext} from "../../contexts/contexts";
 
 import "./Nav.scss";
 
 const variantsMenu = {
-    open: {opacity: 1, duration: 1},
-    closed: {opacity: 0, duration: 3},
+    open: {
+        opacity: 1,
+        transition: {
+            when: "beforeChildren",
+            duration: 0.3,
+        }
+    },
+    closed: {
+        opacity: 0,
+        transition: {
+            when: "afterChildren",
+            duration: 3
+        }
+    },
 }
 const variantsMenuIcon = {
     open: {opacity: 1, scale: 1},
@@ -17,10 +29,19 @@ const variantsMenuIcon = {
 }
 const variantsUl = {
     open: {
-        transition: {staggerChildren: 0.07, delayChildren: 0.2}
+        transition: {
+            when: "afterChildren",
+            staggerChildren: 0.07,
+            delayChildren: 0.4
+        }
     },
     closed: {
-        transition: {staggerChildren: 0.05, staggerDirection: -1}
+        transition: {
+            when: "afterChildren",
+            staggerChildren: 0.05,
+            staggerDirection: -1,
+            duration: 3
+        }
     }
 };
 const variantsLi = {
@@ -35,24 +56,27 @@ const variantsLi = {
         y: 50,
         opacity: 0,
         transition: {
-            y: {stiffness: 1000}
+            y: {stiffness: 1000, velocity: -100}
         }
     }
 };
 
 const Nav = ({items}) => {
+    const navigate = useNavigate();
     const [open, setOpen] = useContext(MenuContext);
 
+    const handleRouteLink = (url) => {
+        setOpen(false);
+        navigate(url);
+    }
     const listOfItems = items.map((item, index) =>
-        <li key={`li-${index}`} className="Nav-menu-item">
+        <li key={`li-${index}`} className="Nav-menu-item heading">
             <motion.div
                 variants={variantsLi}
-                whileHover={{scale: 1.1}}
-                whileTap={{scale: 0.95}}
                 key={index}
                 className="Nav-menu-item-wrapper"
             >
-                <Link to={item.link}>{item.label}</Link>
+                <a href="#" onClick={() => handleRouteLink(item.link)}>{item.label}</a>
             </motion.div>
         </li>
     );
@@ -92,16 +116,15 @@ const Nav = ({items}) => {
                     </motion.svg>
                 </AnimatePresence>
             </div>
+
             <motion.div
                 animate={open ? "open" : "closed"}
                 variants={variantsMenu}
                 className="Nav-menu"
             >
-                <div className="Nav-menu">
                     <motion.ul variants={variantsUl}>
                         {listOfItems}
                     </motion.ul>
-                </div>
             </motion.div>
 
         </nav>

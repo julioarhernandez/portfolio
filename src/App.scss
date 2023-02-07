@@ -1,11 +1,18 @@
+@import "styles/base.scss";
+@import "styles/fonts.scss";
+
 .App {
     background: black;
     color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 12px 24px;
+    padding: 24px;
+    &-header {
+        z-index: 2;
+    }
     &-main {
         flex: 1;
+        margin-top: 60px;
     }
 }

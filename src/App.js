@@ -9,8 +9,21 @@ import pagesData from "./data/pages";
 import './App.scss';
 
 const variantsMenu = {
-    open: {opacity: 1},
-    closed: {opacity: 0},
+    open: {
+        opacity: 1,
+        transition: {
+            when: "beforeChildren",
+            duration: 1,
+            delay: 1
+        }
+    },
+    closed: {
+        opacity: 0,
+        transition: {
+            when: "afterChildren",
+            duration: 0.3,
+        }
+    },
 }
 
 function App() {
@@ -22,19 +35,17 @@ function App() {
     }, [menuOpen]);
   return (
       <MenuContext.Provider value={[menuOpen, setMenuOpen]}>
-        <div className="App">
-          <header className="App-header">
-              <Nav items={pagesData}/>
-          </header>
-            <motion.div className="App-main"
-                animate={menuOpen ? "closed" : "open"}
-                key="openIcon"
-                variants={variantsMenu}>
-                  <AnimatePresence initial={false} mode="wait">
-                      {currentOutlet && React.cloneElement(currentOutlet, { key: pathname })}
-                  </AnimatePresence>
-            </motion.div>
-        </div>
+            <div className="App">
+              <header className="App-header">
+                  <Nav items={pagesData}/>
+              </header>
+                <motion.div className="App-main"
+                    animate={menuOpen ? "closed" : "open"}
+                    key="openIcon"
+                    variants={variantsMenu}>
+                          {currentOutlet && React.cloneElement(currentOutlet, { key: pathname })}
+                </motion.div>
+            </div>
       </MenuContext.Provider>
   );
 }

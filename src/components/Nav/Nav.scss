@@ -9,8 +9,22 @@
         left: 0;
         right: 0;
         bottom: 0;
+        display: grid;
+        place-items: center;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
         &-item {
             overflow: hidden;
+            a {
+                color: white;
+                text-decoration: none;
+            }
         }
     }
     &-icon {
