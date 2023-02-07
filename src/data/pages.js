@@ -13,10 +13,6 @@ const pagesData =  {
             link: 'jobs/',
         },
         {
-            label: 'Past Work',
-            link: 'work/',
-        },
-        {
             label: 'About me',
             link: 'about/',
         }
