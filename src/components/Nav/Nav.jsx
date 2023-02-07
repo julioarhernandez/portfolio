@@ -9,6 +9,7 @@ import "./Nav.scss";
 const variantsMenu = {
     open: {
         opacity: 1,
+        zIndex: 2,
         transition: {
             when: "beforeChildren",
             duration: 0.3,
@@ -16,6 +17,7 @@ const variantsMenu = {
     },
     closed: {
         opacity: 0,
+        zIndex: 0,
         transition: {
             when: "afterChildren",
             duration: 3
