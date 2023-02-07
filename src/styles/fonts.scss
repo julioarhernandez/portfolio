@@ -10,7 +10,7 @@
     }
     &-highlighted {
         color: red;
-        -webkit-text-stroke: 0;
+        -webkit-text-stroke: initial;
     }
     > span {
         &:not(:last-child){
