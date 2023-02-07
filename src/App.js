@@ -5,7 +5,6 @@ import {MenuContext} from "./contexts/contexts";
 
 import Nav from "./components/Nav/Nav";
 
-import pagesData from "./data/pages";
 import './App.scss';
 
 const variantsMenu = {
@@ -37,7 +36,7 @@ function App() {
       <MenuContext.Provider value={[menuOpen, setMenuOpen]}>
             <div className="App">
               <header className="App-header">
-                  <Nav items={pagesData}/>
+                  <Nav />
               </header>
                 <motion.div className="App-main"
                     animate={menuOpen ? "closed" : "open"}
