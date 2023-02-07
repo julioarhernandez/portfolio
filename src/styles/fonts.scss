@@ -1,2 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+.heading {
+    font-family: 'Fredoka One', cursive;
+    font-size: 36px;
+    text-transform: uppercase;
+    &-transparent {
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+    }
+    &-highlighted {
+        color: red;
+        -webkit-text-stroke: 0;
+    }
+    > span {
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+}
