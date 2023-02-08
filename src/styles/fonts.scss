@@ -41,3 +41,17 @@ body {
         
     }
 }
+.subheading {
+    font-family: 'Widescreen VF', cursive;
+    font-variation-settings: "MIXD" 100, "wght" 900, "wdth" 100;
+    font-size: 16px;
+    text-transform: uppercase;
+    &-transparent {
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+    }
+    &-highlighted {
+        color: red;
+        font-size: 35px;
+    }
+}
