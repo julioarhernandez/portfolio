@@ -47,7 +47,7 @@ const listOfAsideItems = jobsData.jobs.map((item, index) =>
             key={index}
             className="Jobs-menu-item-wrapper"
         >
-            <div className="Jobs-menu-item-header">
+            <div className="Jobs-menu-item-header subheading">
                 {item.header}
             </div>
             <div className="Jobs-menu-item-position">

@@ -1,6 +1,6 @@
 const jobsData = {
     header: 'Job Experience',
-    content: '<p>Front-end developer with full experience building and designing responsive driven websites and web applications, using HTML5, CSS3, JavaScript and different web scripting technologies, web standards and project management tools and principles of Atomic Design. Enthusiastic web professional with deep design jobss. Always exploring new coding techniques and environments. Experience in the full life cycle of the web design process including requirements, definition, interface design, implementation, coding, testing and maintenance.</p>',
+    content: '<p>As a seasoned front-end developer, I have had the opportunity to work on a variety of projects and gain a diverse set of experiences. Throughout my career, I have honed my skills in HTML, CSS, JavaScript, and various front-end frameworks and libraries, and have consistently delivered high-quality work.</p><p>Here is a list of my past positions as a front-end developer:</p>',
     jobs: [
         {
             header: 'NCLH - Norwegian Cruise Line',

@@ -53,7 +53,7 @@ const listOfAsideItems = homeData.links.map((item, index) =>
             key={`li-${index}`}
             className="Home-menu-item"
         >
-            <a href={item.link} className="link link-sawtooth" target="_blank">{item.label}</a>
+            <a href={item.link} className="link link-sawtooth">{item.label}</a>
         </motion.li>
 );
 

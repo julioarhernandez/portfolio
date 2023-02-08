@@ -6,20 +6,15 @@ const pagesData =  {
             slug: ''
         },
         {
-            label: 'My skills',
-            link: 'skills/',
-            slug: 'skills'
+            label: 'About me',
+            link: 'about/',
+            slug: 'about'
         },
         {
             label: 'Job Experience',
             link: 'jobs/',
             slug: 'jobs'
         },
-        {
-            label: 'About me',
-            link: 'about/',
-            slug: 'about'
-        }
     ],
     contact: [
         {

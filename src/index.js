@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import Home from './components/Home/Home';
 import About from './components/About/About';
-import Skills from './components/Skills/Skills';
 import Jobs from './components/Jobs/Jobs';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -25,11 +24,6 @@ const router = createBrowserRouter([
                 path: "/about",
                 element: <About />,
             },
-            {
-                path: "/skills",
-                element: <Skills />,
-            },
-            ,
             {
                 path: "/jobs",
                 element: <Jobs />,
