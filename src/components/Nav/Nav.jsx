@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {AnimatePresence, motion} from "framer-motion"
 import {MenuContext} from "../../contexts/contexts";
@@ -64,14 +64,16 @@ const variantsLi = {
     }
 };
 
-const Nav = () => {
+const Nav = ({activePath}) => {
     const navigate = useNavigate();
     const [open, setOpen] = useContext(MenuContext);
+    const cleanActivePath = activePath.toLowerCase().replaceAll('/', '');
 
     const handleRouteLink = (url) => {
         setOpen(false);
         navigate(url);
     }
+
     const listOfItems = pagesData.pages.map((item, index) =>
         <li key={`li-${index}`} className="Nav-menu-item heading">
             <motion.div
@@ -79,19 +81,19 @@ const Nav = () => {
                 key={index}
                 className="Nav-menu-item-wrapper"
             >
-                <a href="#" onClick={() => handleRouteLink(item.link)}>{item.label}</a>
+                <a href="#" className={cleanActivePath === item.slug ? "active" : ""} onClick={() => handleRouteLink(item.link)}>{item.label}</a>
             </motion.div>
         </li>
     );
 
     const listOfAsideItems = pagesData.contact.map((item, index) =>
-        <li key={`li-${index}`} className="Nav-menu-item">
+        <li key={`li-${index}`} className="Nav-menu-item-contact">
             <motion.div
                 variants={variantsLi}
                 key={index}
                 className="Nav-menu-item-wrapper"
             >
-                <a href={item.link} target="_blank">{item.label}</a>
+                <a href={item.link} className="link link-sawtooth"  target="_blank">{item.label}</a>
             </motion.div>
         </li>
     );

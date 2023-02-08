@@ -7,7 +7,7 @@ const list = {
         opacity: 1,
         transition: {
             when: "beforeChildren",
-            staggerChildren: 0.3,
+            staggerChildren: 0.05,
             delay: 1
         },
     },
@@ -46,7 +46,7 @@ const About = () => {
                 className="aside"
                 variants={item}
             >
-                <a href="#">Donwload resume</a>
+                <a href="#" className="link link-sawtooth">Donwload resume</a>
             </motion.div>
         </motion.div>
     )

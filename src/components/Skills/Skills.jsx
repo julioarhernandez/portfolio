@@ -24,7 +24,7 @@ const list = {
         opacity: 1,
         transition: {
             when: "beforeChildren",
-            staggerChildren: 0.3,
+            staggerChildren: 0.05,
             delay: 1
         },
     },

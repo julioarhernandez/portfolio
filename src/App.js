@@ -36,7 +36,7 @@ function App() {
       <MenuContext.Provider value={[menuOpen, setMenuOpen]}>
             <div className="App">
               <header className="App-header">
-                  <Nav />
+                  <Nav activePath={pathname}/>
               </header>
                 <motion.div className="App-main"
                     animate={menuOpen ? "closed" : "open"}

@@ -7,7 +7,7 @@ const list = {
         opacity: 1,
         transition: {
             when: "beforeChildren",
-            staggerChildren: 0.3,
+            staggerChildren: 0.05,
             delay: 1
         },
     },
@@ -24,14 +24,20 @@ const variantsLi = {
         y: 0,
         opacity: 1,
         transition: {
-            y: {stiffness: 1000, velocity: -100}
+            y: {
+                // stiffness: 1000,
+                // velocity: -100,
+                staggerChildren: 0.05}
         }
     },
     closed: {
         y: 50,
         opacity: 0,
         transition: {
-            y: {stiffness: 1000, velocity: -100}
+            y: {
+                // stiffness: 1000,
+                // velocity: -100,
+                staggerChildren: 0.05,}
         }
     }
 };
@@ -42,15 +48,13 @@ const item = {
 }
 
 const listOfAsideItems = homeData.links.map((item, index) =>
-    <li key={`li-${index}`} className="Home-menu-item">
-        <motion.div
+        <motion.li
             variants={variantsLi}
-            key={index}
-            className="Home-menu-item-wrapper"
+            key={`li-${index}`}
+            className="Home-menu-item"
         >
-            <a href={item.link} target="_blank">{item.label}</a>
-        </motion.div>
-    </li>
+            <a href={item.link} className="link link-sawtooth" target="_blank">{item.label}</a>
+        </motion.li>
 );
 
 const Home = () => {
@@ -89,6 +93,7 @@ const Home = () => {
                 </motion.ul>
             </div>
         </motion.div>
+
 
     )
 }

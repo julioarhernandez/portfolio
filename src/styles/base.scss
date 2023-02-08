@@ -1,4 +1,29 @@
 
 a {
     color: white;
+    &.link {
+        &.link-sawtooth {
+            position: relative;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            &:after {
+                content: '';
+                display: block;
+                height: 10px;
+                width: 100%;
+                bottom: -10px;
+                position: absolute;
+                background-image: url('/img/zigzag.svg');
+                background-size: contain;
+                background-position: 0;
+                transition: .3s;
+            }
+            &:hover {
+                &:after {
+                    background-position: 20px;
+                }
+            }
+        }
+    }
 }
