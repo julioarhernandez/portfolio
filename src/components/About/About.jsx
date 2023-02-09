@@ -1,6 +1,7 @@
 import {motion, motion as m} from "framer-motion";
 import "./About.scss";
 import aboutData from "../../data/about";
+import aboutImage from "../../img/gradient-home-mobile.jpg";
 
 const list = {
     visible: {
@@ -60,16 +61,26 @@ const listOfAsideItems = aboutData.skills.map((item, index) =>
 const About = () => {
     return (
         <m.div className="About" initial="hidden" animate="visible" variants={list} >
-            <m.div className="heading" variants={item} >
-                {aboutData.header}
-            </m.div>
-            <m.div className="content" variants={item} dangerouslySetInnerHTML={{__html: aboutData.content}} />
-            <m.ul className="list" variants={item}>
-                {listOfAsideItems}
-            </m.ul>
-            <m.div className="aside" variants={item}>
-                <a href="#" className="link link-sawtooth">Donwload resume</a>
-            </m.div>
+            <div className="About-header">
+                <m.div className="About-header-image" variants={item} >
+                    <img src={aboutImage} />
+                </m.div>
+                <m.div className="About-header-title" variants={item} >
+                    <span className="heading">
+                        {aboutData.header}
+                    </span>
+                </m.div>
+            </div>
+           <div className="About-content">
+               <m.div className="content" variants={item} dangerouslySetInnerHTML={{__html: aboutData.content}} />
+               <m.ul className="list" variants={item}>
+                   {listOfAsideItems}
+               </m.ul>
+               <m.div className="aside" variants={item}>
+                   <a href="#" className="link link-sawtooth">Donwload resume</a>
+               </m.div>
+           </div>
+
         </m.div>
     )
 }
