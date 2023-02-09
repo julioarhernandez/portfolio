@@ -15,7 +15,7 @@ body {
     font-variation-settings: "MIXD" 100, "wght" 900, "wdth" 100;
     font-size: 24px;
     text-transform: uppercase;
-    
+    color: white;
     &-transparent {
         color: transparent;
         -webkit-text-stroke: 1px white;
@@ -33,7 +33,7 @@ body {
         font-variation-settings: "MIXD" 100, "wght" 900, "wdth" 100;
         transition: .3s;
         &.active {
-            color: $black-transparent-light;
+            color: $white-transparent-light;
         }
         &:hover {
             color: $accent;
@@ -47,6 +47,7 @@ body {
     font-variation-settings: "MIXD" 100, "wght" 900, "wdth" 100;
     font-size: 16px;
     text-transform: uppercase;
+    color: white;
     &-transparent {
         color: transparent;
         -webkit-text-stroke: 1px white;

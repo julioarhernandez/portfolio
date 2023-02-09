@@ -39,7 +39,7 @@ body {
 }
 .App {
     position: relative;
-    color: white;
+    color: $white-transparent-dark;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
