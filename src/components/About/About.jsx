@@ -1,4 +1,8 @@
-import {motion, motion as m} from "framer-motion";
+import React, { useRef, useEffect} from "react";
+import {motion as m} from "framer-motion";
+import Lottie from "lottie-react";
+import lottieAbout from "../../lottieAbout.json";
+
 import "./About.scss";
 import aboutData from "../../data/about";
 import aboutImage from "../../img/gradient-home-mobile.jpg";
@@ -62,8 +66,8 @@ const About = () => {
     return (
         <m.div className="About" initial="hidden" animate="visible" variants={list} >
             <div className="About-header">
-                <m.div className="About-header-image" variants={item} >
-                    <img src={aboutImage} />
+                <m.div className="About-header-image" variants={item}>
+                    <Lottie animationData={lottieAbout} />
                 </m.div>
                 <m.div className="About-header-title" variants={item} >
                     <span className="heading">

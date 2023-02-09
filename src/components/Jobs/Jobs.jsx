@@ -1,4 +1,7 @@
-import {motion} from "framer-motion";
+import {motion, motion as m} from "framer-motion";
+import Lottie from "lottie-react";
+import lottieJobs from "../../lottieJobs.json";
+
 import "./Jobs.scss";
 import jobsData from "../../data/jobs";
 
@@ -72,24 +75,31 @@ const Jobs = () => {
             variants={list}
             className="Jobs"
         >
-            <motion.div
-                className="heading"
-                variants={item}
-            >
-                {jobsData.header}
-            </motion.div>
-            <motion.div
-                className="content"
-                variants={item}
-                dangerouslySetInnerHTML={{__html: jobsData.content}}>
-            </motion.div>
-            <div className="Jobs-menu-aside">
-                <motion.ul
-                    variants={item}
-                >
-                    {listOfAsideItems}
-                </motion.ul>
+            <div className="Jobs-header">
+                <m.div className="About-header-image" variants={item}>
+                    <Lottie animationData={lottieJobs} />
+                </m.div>
+                <m.div className="Jobs-header-title" variants={item} >
+                    <span className="heading">
+                        {jobsData.header}
+                    </span>
+                </m.div>
             </div>
+            <div className="About-content">
+                <motion.div
+                    className="content"
+                    variants={item}
+                    dangerouslySetInnerHTML={{__html: jobsData.content}}>
+                </motion.div>
+                <div className="Jobs-menu-aside">
+                    <motion.ul
+                        variants={item}
+                    >
+                        {listOfAsideItems}
+                    </motion.ul>
+                </div>
+            </div>
+
         </motion.div>
     )
 }
