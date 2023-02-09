@@ -1,10 +1,11 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {AnimatePresence, motion} from "framer-motion"
 import {MenuContext} from "../../contexts/contexts";
 import pagesData from "../../data/pages";
 
 import "./Nav.scss";
+// import logo from "../../img/JR.png";
 
 const variantsMenu = {
     open: {
@@ -99,6 +100,10 @@ const Nav = ({activePath}) => {
     );
     return (
         <nav className="Nav">
+            <div className="Nav-logo">
+                {/*<img className="Nav-logo-img" src={logo} />*/}
+                <span className="Nav-logo-text">JR</span>
+            </div>
             <div className="Nav-icon">
                 <AnimatePresence mode="in-out" >
                     <motion.svg
