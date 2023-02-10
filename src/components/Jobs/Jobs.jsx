@@ -173,6 +173,7 @@ const Jobs = () => {
                     <motion.ul
                         variants={item}
                         className="Jobs-menu-aside-list"
+                        style={{counterReset: `counter ${listOfAsideItems.length + 1}`}}
                     >
                         {listOfAsideItems}
                     </motion.ul>

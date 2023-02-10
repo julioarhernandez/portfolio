@@ -31,11 +31,22 @@
                     }
                 }
             }
-            
             &-wrapper {
                 position: relative;
                 margin-right: 20px;
                 margin-left: var(--leftMarginTimeLimeWrapper);
+                &:before {
+                    content: ".0" counter(counter);
+                    counter-increment: counter -1;
+                    font-size: 76px;
+                    line-height: 1;
+                    font-weight: 800;
+                    font-family: 'Widescreen VF', cursive;
+                    font-variation-settings: "wdth" 200;
+                    margin-bottom: 20px;
+                    display: block;
+                    opacity: 0.2;
+                }
             }
             &-bar {
                 position: absolute;
@@ -69,11 +80,13 @@
             &-details {
                 margin-top: 10px;
             }
-            
         }
         &-aside {
             position: relative;
             margin-left: var(--leftMarginTimeLine);
+            &-list {
+                gap: 50px;
+            }
             &:before {
                 content: '';
                 width: 1px;
@@ -83,9 +96,7 @@
                 left: var(--leftPositionTimeLine);
                 background-color: $white-transparent-lighter;
             }
-            &-list {
-                gap: 50px;
-            }
+            
         }
     }
 }
