@@ -5,20 +5,46 @@ import lottieJobs from "../../lottieJobs.json";
 import "./Jobs.scss";
 import jobsData from "../../data/jobs";
 
-const variantsLi = {
-    open: {
-        y: 0,
+
+const cardVariants= {
+    offscreen: {
+        x: 0,
+        opacity: 0.3
+    },
+    onscreen: {
+        x: 20,
         opacity: 1,
         transition: {
-            y: {stiffness: 1000, velocity: -100}
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8
         }
-    },
-    closed: {
-        y: 50,
+    }
+};
+
+const dateMotion = {
+    offscreen: {
         opacity: 0,
+    },
+    onscreen: {
+       opacity: 1
+    }
+};
+
+const barMotion = {
+    offscreen: {
+        opacity: 0,
+        height: 0
+    },
+    onscreen: {
+        opacity: 1,
+        height: '100%',
         transition: {
-            y: {stiffness: 1000, velocity: -100}
+            type: "spring",
+            bounce: 0.2,
+            duration: 3,
         }
+
     }
 };
 
@@ -44,9 +70,23 @@ const item = {
 }
 
 const listOfAsideItems = jobsData.jobs.map((item, index) =>
-    <li key={`jobs-li-${index}`} className="Jobs-menu-item">
-        <motion.div
-            variants={variantsLi}
+
+    <m.li
+        key={`jobs-li-${index}`}
+        className="Jobs-menu-item"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{
+            once: false,
+            amount: 0.4
+        }}
+    >
+        <m.div
+            className="Jobs-menu-item-bar"
+            variants={barMotion}
+        ></m.div>
+        <m.div
+            variants={cardVariants}
             key={index}
             className="Jobs-menu-item-wrapper"
         >
@@ -59,18 +99,22 @@ const listOfAsideItems = jobsData.jobs.map((item, index) =>
             <div className="Jobs-menu-item-position">
                 {item.position}
             </div>
-            <div className="Jobs-menu-item-dates Jobs-menu-item-dates-top">
+            <m.div
+                className="Jobs-menu-item-dates Jobs-menu-item-dates-top"
+                variants={dateMotion}>
                 {item.endingDate}
-            </div>
-            <div className="Jobs-menu-item-dates Jobs-menu-item-dates-bottom">
+            </m.div>
+            <m.div
+                className="Jobs-menu-item-dates Jobs-menu-item-dates-bottom"
+                variants={dateMotion}>
                 {item.startingDate}
-            </div>
+            </m.div>
             <div className="Jobs-menu-item-details">
                 {item.details}
             </div>
 
-        </motion.div>
-    </li>
+        </m.div>
+    </m.li>
 );
 
 const Jobs = () => {

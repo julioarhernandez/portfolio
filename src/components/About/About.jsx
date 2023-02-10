@@ -59,10 +59,10 @@ const listOfAsideItems = aboutData.skills.map((item, index) =>
             </div>
             <ul className="About-menu-item-list">
                     {
-                        item.list.map( (skill, index) => {
+                        item.list.map( (skill, i) => {
                             return (
                                 <li className={`badge ${mapSkillsToStyleClasses[index]}`}
-                                key={`about-li-item-${index}`}>
+                                key={`about-li-item-${i}`}>
                                     {skill}
                                 </li>
                             )
