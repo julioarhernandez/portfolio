@@ -1,3 +1,4 @@
+@import "styles/variables.scss";
 @import "styles/base.scss";
 @import "styles/colors.scss";
 @import "styles/fonts.scss";
@@ -43,12 +44,13 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 24px 24px 48px;
+    padding: var(--body-padding);
     z-index: 2;
     
     &-main {
         flex: 1;
-        margin-top: 80px;
+        margin: 80px auto;
+        width: var(--app-container-width);
     }
     .badge {
         border-radius: 5px;
