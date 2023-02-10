@@ -1,27 +1,49 @@
 @import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 .Jobs {
-    $leftMarginTimeLineMobile: 35px;
     position: relative;
-    width: 320px;
-    margin: auto;
     .content {
         margin-bottom: 40px;
     }
     
     &-menu {
         &-item {
+            $a: &;
             position: relative;
+            @media (min-width: 768px){
+                width: 50%;
+                flex: 1 1 50%;
+                &:nth-child(even){
+                    align-self: flex-end;
+                }
+                &:nth-child(odd){
+                    #{$a}-bar {
+                        left: auto;
+                        right: -2px;
+                    }
+                    #{$a}-wrapper {
+                        margin-right: 35px;
+                        margin-left: 20px;
+                    }
+                    #{$a}-dates {
+                        right: -35px;
+                        left: auto;
+                    }
+                }
+            }
+            
             &-wrapper {
                 position: relative;
                 margin-right: 20px;
+                margin-left: var(--leftMarginTimeLimeWrapper);
             }
             &-bar {
                 position: absolute;
-                left: -36px;
+                left: var(--leftMarginTimeLineBar);
                 top: 0;
                 height: 0;
                 width: 3px;
-                background: linear-gradient(180deg, white, transparent);
+                background-color: white;
             }
             &-image {
                 > img {
@@ -31,7 +53,7 @@
             &-dates {
                 color: rgba(255, 255, 255, 0.7);
                 position: absolute;
-                left: -$leftMarginTimeLineMobile;
+                left: var(--leftMarginTimeLineDates);
                 writing-mode: vertical-rl;
                 transform: scale(-1);
                 text-transform: uppercase;
@@ -51,14 +73,14 @@
         }
         &-aside {
             position: relative;
-            margin-left: $leftMarginTimeLineMobile;
+            margin-left: var(--leftMarginTimeLine);
             &:before {
                 content: '';
                 width: 1px;
                 height: 100%;
                 display: block;
                 position: absolute;
-                left: -$leftMarginTimeLineMobile;
+                left: var(--leftPositionTimeLine);
                 background-color: $white-transparent-lighter;
             }
             &-list {
