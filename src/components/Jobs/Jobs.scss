@@ -1,4 +1,5 @@
 .Jobs {
+    $leftMarginTimeLineMobile: 35px;
     position: relative;
     width: 320px;
     margin: auto;
@@ -8,11 +9,49 @@
     
     &-menu {
         &-item {
+            &-wrapper {
+                position: relative;
+            }
+            &-image {
+                > img {
+                    width: 100%;
+                }
+            }
             &-dates {
                 color: rgba(255, 255, 255, 0.7);
+                position: absolute;
+                left: -$leftMarginTimeLineMobile;
+                writing-mode: vertical-rl;
+                transform: scale(-1);
+                text-transform: uppercase;
+                font-size: 14px;
+                &-top {
+                    top: 0;
+                }
+                &-bottom {
+                    bottom: 0;
+                }
+                
             }
             &-details {
                 margin-top: 10px;
+            }
+            
+        }
+        &-aside {
+            position: relative;
+            margin-left: $leftMarginTimeLineMobile;
+            &:before {
+                content: '';
+                width: 1px;
+                height: 100%;
+                display: block;
+                position: absolute;
+                left: -$leftMarginTimeLineMobile;
+                background-color: white;
+            }
+            &-list {
+                gap: 50px;
             }
         }
     }

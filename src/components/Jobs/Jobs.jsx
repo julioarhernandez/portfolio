@@ -44,20 +44,26 @@ const item = {
 }
 
 const listOfAsideItems = jobsData.jobs.map((item, index) =>
-    <li key={`li-${index}`} className="Jobs-menu-item">
+    <li key={`jobs-li-${index}`} className="Jobs-menu-item">
         <motion.div
             variants={variantsLi}
             key={index}
             className="Jobs-menu-item-wrapper"
         >
+            <div className="Jobs-menu-item-image">
+                <img src={require('../../img/ncl.jpg')} />
+            </div>
             <div className="Jobs-menu-item-header subheading">
                 {item.header}
             </div>
             <div className="Jobs-menu-item-position">
                 {item.position}
             </div>
-            <div className="Jobs-menu-item-dates">
-                {item.dates}
+            <div className="Jobs-menu-item-dates Jobs-menu-item-dates-top">
+                {item.endingDate}
+            </div>
+            <div className="Jobs-menu-item-dates Jobs-menu-item-dates-bottom">
+                {item.startingDate}
             </div>
             <div className="Jobs-menu-item-details">
                 {item.details}
@@ -76,7 +82,7 @@ const Jobs = () => {
             className="Jobs"
         >
             <div className="Jobs-header">
-                <m.div className="About-header-image" variants={item}>
+                <m.div className="Jobs-header-image" variants={item}>
                     <Lottie animationData={lottieJobs} />
                 </m.div>
                 <m.div className="Jobs-header-title" variants={item} >
@@ -85,7 +91,7 @@ const Jobs = () => {
                     </span>
                 </m.div>
             </div>
-            <div className="About-content">
+            <div className="Job-content">
                 <motion.div
                     className="content"
                     variants={item}
@@ -94,6 +100,7 @@ const Jobs = () => {
                 <div className="Jobs-menu-aside">
                     <motion.ul
                         variants={item}
+                        className="Jobs-menu-aside-list"
                     >
                         {listOfAsideItems}
                     </motion.ul>

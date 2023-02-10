@@ -52,16 +52,17 @@ const mapSkillsToStyleClasses = [
 ];
 
 const listOfAsideItems = aboutData.skills.map((item, index) =>
-    <li key={`li-${index}`} className="About-menu-item">
+    <li key={`about-li-${index}`} className="About-menu-item">
         <div className="About-menu-item-wrapper">
             <div className="About-menu-item-header subheading">
                 {item.header}
             </div>
             <ul className="About-menu-item-list">
                     {
-                        item.list.map( (skill) => {
+                        item.list.map( (skill, index) => {
                             return (
-                                <li className={`badge ${mapSkillsToStyleClasses[index]}`}>
+                                <li className={`badge ${mapSkillsToStyleClasses[index]}`}
+                                key={`about-li-item-${index}`}>
                                     {skill}
                                 </li>
                             )
