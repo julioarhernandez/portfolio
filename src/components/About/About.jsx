@@ -5,7 +5,6 @@ import lottieAbout from "../../lottieAbout.json";
 
 import "./About.scss";
 import aboutData from "../../data/about";
-import aboutImage from "../../img/gradient-home-mobile.jpg";
 
 const list = {
     visible: {
@@ -45,19 +44,30 @@ const item = {
     hidden: { opacity: 0, y: -100 },
 }
 
+const mapSkillsToStyleClasses = [
+    "badge-primary-accent",
+    "badge-secondary-accent",
+    "badge-third-accent",
+    "badge-fourth-accent"
+];
+
 const listOfAsideItems = aboutData.skills.map((item, index) =>
     <li key={`li-${index}`} className="About-menu-item">
         <div className="About-menu-item-wrapper">
             <div className="About-menu-item-header subheading">
                 {item.header}
             </div>
-            <div className="About-menu-item-list">
-                {
-                    item.list.map( (skill, index, arr) => {
-                        return skill + (index !== arr.length - 1 ? ', ': '');
-                    })
-                }
-            </div>
+            <ul className="About-menu-item-list">
+                    {
+                        item.list.map( (skill) => {
+                            return (
+                                <li className={`badge ${mapSkillsToStyleClasses[index]}`}>
+                                    {skill}
+                                </li>
+                            )
+                        })
+                    }
+            </ul>
         </div>
     </li>
 );
@@ -80,10 +90,13 @@ const About = () => {
                <m.ul className="list" variants={item}>
                    {listOfAsideItems}
                </m.ul>
-               <m.div className="aside" variants={item}>
-                   <a href="#" className="link link-sawtooth">Donwload resume</a>
-               </m.div>
+
            </div>
+            <div className="About-aside">
+                <m.div className="aside" variants={item}>
+                    <a href="#" className="link link-sawtooth">Download resume</a>
+                </m.div>
+            </div>
 
         </m.div>
     )

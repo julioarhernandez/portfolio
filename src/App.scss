@@ -43,16 +43,35 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 24px 24px 48px;
     z-index: 2;
     
-    &-header {
-    }
     &-main {
         flex: 1;
         margin-top: 80px;
     }
+    .badge {
+        border-radius: 5px;
+        padding: 5px 10px;
+        display: inline-block;
+        &-primary {
+            &-accent {
+                background-color: $primary-accent-transparent;
+            }
+        }
+        &-secondary {
+            &-accent {
+                background-color: $secondary-accent-transparent;
+            }
+        }
+        &-third {
+            &-accent {
+                background-color: $third-accent-transparent;
+            }
+        }
+    }
 }
+
 @keyframes opacityAnimation {
     0% {
         opacity: 0.5;

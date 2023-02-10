@@ -1,5 +1,15 @@
 $dark: #111;
-$accent: #ff4000;
 $gray: #8c8c8c;
-$white-transparent-light: rgba(255, 255, 255, 0.32);
-$white-transparent-dark: rgba(255, 255, 255, 0.8);
+
+$primary-accent: #ff4000;
+$secondary-accent: #FF8E00;
+$third-accent: #4DC58B;
+
+$badge-opacity: 0.3;
+
+$primary-accent-transparent: rgba($primary-accent, $badge-opacity);
+$secondary-accent-transparent: rgba($secondary-accent, $badge-opacity);
+$third-accent-transparent: rgba($third-accent, $badge-opacity);
+
+$white-transparent-light: rgba(#fff, 0.32);
+$white-transparent-dark: rgba(#fff, 0.8);

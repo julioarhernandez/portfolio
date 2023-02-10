@@ -6,6 +6,9 @@
     .content {
         margin-bottom: 40px;
     }
+    &-content {
+        margin-bottom: 50px;
+    }
     &-header {
         &-image {
             margin-bottom: 20px;
@@ -16,6 +19,23 @@
                 border-radius: 5px;
             }
             
+        }
+    }
+    &-menu {
+        &-item {
+            &:not(:last-child){
+                margin-bottom: 30px;
+            }
+            &-header {
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+            }
+            &-list {
+                gap: 10px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
         }
     }
 }

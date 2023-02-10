@@ -21,7 +21,7 @@ body {
         -webkit-text-stroke: 1px white;
     }
     &-highlighted {
-        color: $accent;
+        color: $primary-accent;
         font-size: 24px;
     }
     > span {
@@ -36,7 +36,7 @@ body {
             color: $white-transparent-light;
         }
         &:hover {
-            color: $accent;
+            color: $primary-accent;
             font-variation-settings: "MIXD" 200, "wght" 900, "wdth" 100;
         }
         
@@ -53,7 +53,7 @@ body {
         -webkit-text-stroke: 1px white;
     }
     &-highlighted {
-        color: $accent;
+        color: $primary-accent;
         font-size: 35px;
     }
 }
