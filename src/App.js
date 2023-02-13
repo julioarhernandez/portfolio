@@ -9,11 +9,12 @@ import './App.scss';
 
 const variantsMenu = {
     open: {
+        display: 'block',
         opacity: 1,
         transition: {
             when: "beforeChildren",
             duration: 1,
-            delay: 1
+            delay: 0.5
         }
     },
     closed: {
@@ -21,7 +22,8 @@ const variantsMenu = {
         transition: {
             when: "afterChildren",
             duration: 0.3,
-        }
+        },
+        transitionEnd: { display: "none" }
     },
 }
 

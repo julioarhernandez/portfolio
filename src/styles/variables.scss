@@ -1,11 +1,12 @@
 :root {
-    --body-padding: 24px 24px 48px;
+    --body-padding: 0 24px;
     --app-container-width: 320px;
     --leftMarginTimeLine: 35px;
     --leftMarginTimeLineDates: -35px;
     --leftPositionTimeLine: -35px;
     --leftMarginTimeLimeWrapper: 0;
     --leftMarginTimeLineBar: -36px;
+    --navigationIconTop: 40px;
 
     @media (min-width: 480px) and (max-width: 767.9px){
         --body-padding: 48px;
@@ -13,7 +14,7 @@
     }
     
     @media (min-width: 768px){
-        --body-padding: 80px;
+        --body-padding: 0 80px;
         --app-container-width: 600px;
         --leftPositionTimeLine: 50%;
         --leftMarginTimeLine: 0;

@@ -5,7 +5,11 @@
     .content {
         margin-bottom: 40px;
     }
-    
+    &-header {
+        &-title {
+            text-align: center;
+        }
+    }
     &-menu {
         &-item {
             $a: &;

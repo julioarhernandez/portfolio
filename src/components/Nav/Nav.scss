@@ -42,7 +42,7 @@
         position: absolute;
         left: 5px;
         z-index: 1;
-        top: 15px;
+        top: var(--navigationIconTop);
         &-img {
             height: 30px;
             width: 35px;
@@ -59,7 +59,7 @@
         position: absolute;
         right: 5px;
         z-index: 1;
-        top: 15px;
+        top: var(--navigationIconTop);
         &-img {
             //border: 1px solid white;
             height: 40px;
