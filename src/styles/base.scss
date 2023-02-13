@@ -1,4 +1,4 @@
-
+@import "colors";
 a {
     color: white;
     &.link {
@@ -10,18 +10,28 @@ a {
             &:after {
                 content: '';
                 display: block;
-                height: 10px;
+                height: 3px;
+                width: 0%;
+                bottom: -10px;
+                position: absolute;
+                background-size: contain;
+                transition: .3s;
+                background: linear-gradient(90deg, red 95%, black 100%);
+            }
+            &:before {
+                content: '';
+                display: block;
+                height: 3px;
                 width: 100%;
                 bottom: -10px;
                 position: absolute;
-                background-image: url('/img/zigzag.svg');
                 background-size: contain;
-                background-position: 0;
                 transition: .3s;
+                background-color: $white-transparent-lighter;
             }
             &:hover {
                 &:after {
-                    background-position: 20px;
+                    width: 100%;
                 }
             }
         }
