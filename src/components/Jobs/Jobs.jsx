@@ -17,7 +17,7 @@ const Jobs = () => {
             <m.div className="Jobs-menu-item-bar" variants={barMotion}></m.div>
             <m.div variants={setVariant(index)} key={index} className="Jobs-menu-item-wrapper" >
                 <div className="Jobs-menu-item-image">
-                    <img src={require('../../img/ncl.jpg')} />
+                    <img src={require('../../img/' + item.image)} />
                 </div>
                 <div className="Jobs-menu-item-header subheading">
                     {item.header}

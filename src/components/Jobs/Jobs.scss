@@ -63,6 +63,7 @@
             &-image {
                 > img {
                     width: 100%;
+                    filter: hue-rotate(142deg) saturate(0.4) brightness(0.8);
                 }
             }
             &-dates {
