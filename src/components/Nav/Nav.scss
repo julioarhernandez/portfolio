@@ -19,6 +19,10 @@
         }
         &-item {
             overflow: hidden;
+            &-contact {
+                overflow: hidden;
+                height: 35px;
+            }
             a {
                 color: white;
                 text-decoration: none;
