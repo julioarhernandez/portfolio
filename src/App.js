@@ -1,6 +1,6 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useOutlet, useLocation } from "react-router-dom";
-import {AnimatePresence, motion} from "framer-motion";
+import {motion as m} from "framer-motion";
 import {MenuContext} from "./contexts/contexts";
 
 import Nav from "./components/Nav/Nav";
@@ -31,21 +31,18 @@ function App() {
     const currentOutlet = useOutlet();
     const [menuOpen, setMenuOpen] = useState(false);
     const { pathname } = useLocation();
-    useEffect(()=> {
-        console.log('menu context updarte open menu', menuOpen);
-    }, [menuOpen]);
   return (
       <MenuContext.Provider value={[menuOpen, setMenuOpen]}>
             <div className="App">
               <header className="App-header">
                   <Nav activePath={pathname}/>
               </header>
-                <motion.div className="App-main"
+                <m.div className="App-main"
                     animate={menuOpen ? "closed" : "open"}
                     key="openIcon"
                     variants={variantsMenu}>
                           {currentOutlet && React.cloneElement(currentOutlet, { key: pathname })}
-                </motion.div>
+                </m.div>
             </div>
       </MenuContext.Provider>
   );

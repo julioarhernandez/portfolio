@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Jobs from './components/Jobs/Jobs';
 import reportWebVitals from './reportWebVitals';
+
 import {
     createBrowserRouter,
     RouterProvider,
