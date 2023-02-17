@@ -3,7 +3,7 @@ const pageTransition = {
         opacity: 1,
         transition: {
             when: "beforeChildren",
-            staggerChildren: 0.05,
+            staggerChildren: 0.07,
             delay: 1
         },
     },
