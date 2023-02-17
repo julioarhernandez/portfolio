@@ -34,11 +34,22 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(
-  <React.StrictMode>
-      <RouterProvider router={router} />
-  </React.StrictMode>
-);
+// var fontA = new FontFaceObserver('Fredoka', {
+//     weight: 400
+// });
+// var fontB = new FontFaceObserver('Fredoka', {
+//     weight: 700
+// });
+// var fontC = new FontFaceObserver('WidescreenVF');
+
+// Promise.all([fontA.load(null, 15000), fontB.load(null, 15000)], fontC.load(null, 15000)).then(function () {
+    root.render(
+        <React.StrictMode>
+            <RouterProvider router={router} />
+        </React.StrictMode>
+    );
+// });
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
