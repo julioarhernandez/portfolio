@@ -1,0 +1,25 @@
+@font-face {
+	src: url('/fonts/Fredoka-Regular.woff2') format('woff2-variations');
+	font-family: 'Fredoka';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	font-display: swap;
+	
+}
+@font-face {
+	src: url('/fonts/Fredoka-Bold.woff2') format('woff2-variations');
+	font-family: 'Fredoka';
+	font-style: normal;
+	font-weight: 700;
+	font-stretch: 100%;
+	font-display: swap;
+	
+}
+@font-face {
+	src: url('/fonts/wsvf.woff2') format('woff2-variations');
+	font-family:'Widescreen VF';
+	font-style: normal;
+	font-display: swap;
+}
+
