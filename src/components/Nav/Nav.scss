@@ -21,11 +21,12 @@
             overflow: hidden;
             &-contact {
                 overflow: hidden;
-                height: 35px;
+                height: 40px;
             }
             a {
                 color: white;
                 text-decoration: none;
+                cursor: pointer;
             }
         }
         &-list {

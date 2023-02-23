@@ -22,7 +22,7 @@ const Nav = ({activePath}) => {
     const listOfItems = pagesData.pages.map((item, index) =>
         <li key={`li-${index}`} className="Nav-menu-item heading">
             <m.div variants={variantsLi} key={index} className="Nav-menu-item-wrapper" >
-                <a href="#" className={cleanActivePath === item.slug ? "active" : ""} onClick={() => handleRouteLink(item.link)}>{item.label}</a>
+                <a href={() => false} className={cleanActivePath === item.slug ? "active" : ""} onClick={() => handleRouteLink(item.link)}>{item.label}</a>
             </m.div>
         </li>
     );
