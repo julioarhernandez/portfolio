@@ -22,7 +22,7 @@ function App() {
             el.remove();
             setLoading(!isLoading);
         }
-    }, []);
+    }, [isLoading]);
 
     return (
         <MenuContext.Provider value={[menuOpen, setMenuOpen]}>

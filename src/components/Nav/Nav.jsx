@@ -30,7 +30,7 @@ const Nav = ({activePath}) => {
     const listOfAsideItems = pagesData.contact.map((item, index) =>
         <li key={`li-${index}`} className="Nav-menu-item-contact">
             <m.div variants={variantsLi} key={index} className="Nav-menu-item-wrapper" >
-                <a href={item.link} className="link link-sawtooth"  target="_blank">{item.label}</a>
+                <a href={item.link} className="link link-sawtooth"  target="_blank" rel="noreferrer">{item.label}</a>
             </m.div>
         </li>
     );

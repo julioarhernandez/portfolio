@@ -17,7 +17,7 @@ const Jobs = () => {
             <m.div className="Jobs-menu-item-bar" variants={barMotion}></m.div>
             <m.div variants={setVariant(index)} key={index} className="Jobs-menu-item-wrapper" >
                 <div className="Jobs-menu-item-image">
-                    <img src={require('../../img/' + item.image)} />
+                    <img alt={item.header} src={require('../../img/' + item.image)} />
                 </div>
                 <div className="Jobs-menu-item-header subheading">
                     {item.header}
@@ -45,7 +45,7 @@ const Jobs = () => {
         let variant = cardVariantsLeft;
         if (isLarge) {
             // In desktop even items have right effects
-            if (index % 2 == 0) {
+            if (index % 2 === 0) {
                 variant = cardVariantsRight;
             }
         }

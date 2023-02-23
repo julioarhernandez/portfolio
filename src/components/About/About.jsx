@@ -60,7 +60,7 @@ const About = () => {
            </div>
             <div className="About-aside">
                 <m.div className="aside" variants={itemTransition}>
-                    <a href="#" className="link link-sawtooth">Download resume</a>
+                    <a href="#resume" className="link link-sawtooth">Download resume</a>
                 </m.div>
             </div>
         </m.div>
